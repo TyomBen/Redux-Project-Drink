@@ -1,51 +1,63 @@
 import { useEffect, useState } from "react";
 import './styles.css';
+import URL from "../Utils";
 const List = () => {
     const [coctails, setCoctails] = useState ([]);
     const [valuesearch, setValueSearch] = useState ('');
     const gettingData = async () => {
-        const response = await fetch ('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=');
+        const response = await fetch (`${URL}?s=`);
         const data = await response.json ();
-        setCoctails (data.drinks)
+        setCoctails (data.drinks);
     }
   const filteredDrinks = coctails.filter (drink => {
-    return drink.strDrink.toLowerCase ().includes (valuesearch.toLowerCase());
+    const {strDrink} = drink;
+    return strDrink.toLowerCase ().includes (valuesearch.toLowerCase());
   })
+  const handlerNotInteresting = (index) => {
+    setCoctails (filteredDrinks.filter ((element, ind) => ind !== index));
+  }
 
+
+
+// console.log(localStorage.getItem('object'));
+  
   useEffect(() => {
     gettingData()
   }, []);
   
- 
+
     return (
         <>
-        <main>
+        <section>
      <div className="Form-Controlled">
          <label htmlFor = 'name' className= 'label '> Search Your Favorite Cocktail</label> <br />
          <input type = 'text' name="name" id="name" onChange={(event) => setValueSearch(event.target.value)}></input>
          <h1>Cocktails</h1>
      </div>
-     </main>
+     </section>
         {
-           filteredDrinks.map ((coctail) => {
+           filteredDrinks.map ((coctail, index) => {
+            const {idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass} = coctail;
            return ( 
             <>
-        <main>
-            <div className="cocteils-group ">
-                <div className="drinks-styles ">
-            <img src = {coctail.strDrinkThumb} className="images-drinks-styles"/>
-            <h3>{coctail.strDrink}</h3>
-            <h4>{coctail.strGlass}</h4>
-            <p>{coctail.strGlass}</p>
-            <a href="#">Details</a>
+            <div className="cocteils-group" key={idDrink}>
+            <div className="drinks-styles">
+            <img src = {strDrinkThumb} className="images-drinks-styles"/>
+            <h3>{strDrink}</h3>
+            <h4>{strGlass}</h4>
+            <p>{strAlcoholic}</p>
+            <a href="#" className="information-link">Details</a>
+              <button className="Not-Intersted-button" onClick={() => { handlerNotInteresting (index) 
+            localStorage.setItem('idDrink', JSON.stringify(idDrink));
+            localStorage.setItem ('strDrink', JSON.stringify (strDrink))
+            //Indz tvuma el mnacac@ strDrinkThumb ev ayln imast chka grelu arden parze;q
+              }}>Not Interesed</button>
             </div>
             </div>
-                </main>
             </>
            )
 })}
 
-        
         </>
     )
 }
