@@ -50,7 +50,7 @@ const List = () => {
               <button className="Not-Intersted-button" onClick={() => { handlerNotInteresting (index) 
             localStorage.setItem('idDrink', JSON.stringify(idDrink));
             localStorage.setItem ('strDrink', JSON.stringify (strDrink))
-            //Indz tvuma el mnacac@ strDrinkThumb ev ayln imast chka grelu arden parze;q
+            //Indz tvuma el mnacac@ strDrinkThumb ev ayln imast chka grelu arden parze;
               }}>Not Interesed</button>
             </div>
             </div>
