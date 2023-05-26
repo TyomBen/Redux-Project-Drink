@@ -6,8 +6,8 @@ const Header = () => {
     <header>
          <nav>
             <div className = "divHeader"> 
-            <a href = "http://localhost:3000/" className = "headerLink textDecorationNoneandColor">The Cocktail DB</a>
-          <a href = "http://localhost:3000/" className = 'headerHomeLink textDecorationNoneandColor'>Home</a>
+            <a href = "/" className = "headerLink textDecorationNoneandColor">The Cocktail DB</a>
+          <a href = "/" className = 'headerHomeLink textDecorationNoneandColor'>Home</a>
           <a href = "#" className = 'headerHomeLink textDecorationNoneandColor'>About</a>
           </div>
     </nav>
