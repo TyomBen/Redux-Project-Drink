@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import './styles.css';
-import {URL} from "../Utils";
+import { URL } from "../Utills/constants";
 import DataContainer from "../DataContainer";
+import InfoDetailsButton from "../DataContainer/InfoDetailsButton";
 const List = () => {
     const [coctails, setCoctails] = useState ([]);
     const [valuesearch, setValueSearch] = useState ('');
@@ -40,6 +41,7 @@ const List = () => {
         </div>
         </section>
         <DataContainer coctails = {coctails} /> 
+        <InfoDetailsButton coctails = {coctails} />
       </main>
       </>
     )

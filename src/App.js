@@ -1,17 +1,17 @@
 import './App.css';
-import Header from './Header';
-import List from './List';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import About from './DataContainer/About';
+import InfoDetailsButton from './DataContainer/InfoDetailsButton';
+import DataContainer from './DataContainer';
 const App = () => { 
   return(
     <> 
     <BrowserRouter>
-    <Header />
-   <List />
    <Routes>
-    <Route path='/'/>
-    <Route/>
-    <Route/>
+    <Route path='/' element = {<Home/>}/>
+    <Route path='/about' element = {<About/>}/>
+    <Route path='/coctail/:idDrink' element = {<InfoDetailsButton  />}></Route>
    </Routes>
     </BrowserRouter>
   
