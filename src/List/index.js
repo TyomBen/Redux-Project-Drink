@@ -20,7 +20,7 @@ const List = () => {
         <>
         <label htmlFor = 'name' 
         className= 'label'> Search Your Favorite Cocktail</label> <br />
-        <input type = 'text' 
+        <input type = 'text' id="name" 
         onChange={(event) => setValueSearch(event.target.value)} 
         value={valuesearch}></input>
         </>
@@ -41,7 +41,6 @@ const List = () => {
         </div>
         </section>
         <DataContainer coctails = {coctails} /> 
-        <InfoDetailsButton coctails = {coctails} />
       </main>
       </>
     )
@@ -51,7 +50,7 @@ const List = () => {
         <section> 
         <div className="Form-Controlled">
         {hendlerCopySameFunction()}
-        <h2>No Cocktails Matched Your Search Criteria</h2>
+        <h2 className="h2">No Cocktails Matched Your Search Criteria</h2>
         </div>
         </section> 
       </main>

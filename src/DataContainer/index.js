@@ -1,23 +1,8 @@
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import React, { useState } from 'react';
 import { URL } from '../Utills/constant';
 import InfoDetailsButton from './InfoDetailsButton';
 const DataContainer = ({coctails}) => {
-    const [datas, setDatas] = useState ([])
-    const gettingData = async (idDrink) => {
-        try {
-        const response = await fetch(`${URL}?i=${idDrink}`);
-        const data = await response.json();
-            setDatas (data)
-        }catch (error) {
-            throw error;
-        }
-        };
-      
-        const handleclick = (idDrink) => {
-          gettingData (idDrink)
-        }
-
     return (
     <section className = "section">
        {
@@ -25,6 +10,7 @@ const DataContainer = ({coctails}) => {
             const {idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass} = coctail;
             return (
             <React.Fragment key={idDrink}>
+
             <div className="cocteils-group">
             <article className="drinks-styles">
             <img src = {strDrinkThumb}
@@ -33,9 +19,8 @@ const DataContainer = ({coctails}) => {
             <h3>{strDrink}</h3>
             <h4>{strGlass}</h4>
             <p>{strAlcoholic}</p>
-            <Link to={`/coctail/${idDrink}`} className="information-link"
-             onClick={() => handleclick (idDrink)}>
-            Details
+            <Link to={`/coctail/${idDrink}`} className="information-link">
+            DETAILS
             </Link>
             </article>
             </div>
