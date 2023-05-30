@@ -1,9 +1,10 @@
 import Header from "../../Header";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import "./styles.css";
 import React, { useState, useEffect } from "react";
 import { URL } from "../../Utills/constants";
 const InfoDetailsButton = () => {
+  const navigate = useNavigate ()
   const { idDrink } = useParams();
   const [datas, setDatas] = useState([]);
   const gettingData = async () => {
@@ -19,13 +20,16 @@ const InfoDetailsButton = () => {
   useEffect(() => {
     gettingData();
   }, []);
+  const handleClick = () => {
+    navigate ('/')
+  }
   return (
     <>
       <Header />
       <div className="routing-button-container">
-        <Link to={"/"} className="information-link routing-back-button">
-          BACK HOME
-        </Link>
+        <button className="information-link routing-back-button" onClick={handleClick}>
+        BACK HOME
+        </button>
       </div>
       <section className="section">
         {datas.map((item) => {

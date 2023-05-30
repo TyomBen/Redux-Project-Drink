@@ -1,7 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import {Navigate, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 const DataContainer = ({ coctails }) => {
+  const navigate = useNavigate ();
+  const handleClick = (idDrink) => {
+    navigate (`/coctail/${idDrink}`)
+  }
   return (
     <section className="section">
       {coctails.map((coctail) => {
@@ -19,9 +23,9 @@ const DataContainer = ({ coctails }) => {
                 <h3>{strDrink}</h3>
                 <h4>{strGlass}</h4>
                 <p>{strAlcoholic}</p>
-                <Link to={`/coctail/${idDrink}`} className="information-link">
+                <button className="information-link" onClick={() => handleClick (idDrink)}>
                   DETAILS
-                </Link>
+                </button>
               </article>
             </div>
           </React.Fragment>

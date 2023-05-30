@@ -1,3 +1,4 @@
+import InputSearch from "../InputSearch";
 const NotVisibleCoctails = ({ valuesearch, setValueSearch }) => {
     return (
       <>
@@ -9,12 +10,7 @@ const NotVisibleCoctails = ({ valuesearch, setValueSearch }) => {
                 Search Your Favorite Cocktail
               </label>{" "}
               <br />
-              <input
-                type="text"
-                id="name"
-                onChange={(event) => setValueSearch(event.target.value)}
-                value={valuesearch}
-              ></input>
+              <InputSearch setValueSearch = {setValueSearch} valuesearch = {valuesearch}/>
               <h2 className="h2">No Cocktails Matched Your Search Criteria</h2>
             </div>
           </section>
