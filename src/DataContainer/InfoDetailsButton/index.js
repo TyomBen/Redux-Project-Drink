@@ -29,7 +29,7 @@ const InfoDetailsButton = () => {
       <Header />
       <div className="routing-button-container">
         <button className="information-link routing-back-button" onClick={handleClick}>
-        BACK HOME
+        BACK 
         </button>
       </div>
       <section className="section">

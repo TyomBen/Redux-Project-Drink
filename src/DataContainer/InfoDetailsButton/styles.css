@@ -62,7 +62,8 @@ span {
 .information-link {
     letter-spacing: 2px;
     transition: 0.5s;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
+    line-height: 30px;
 }
 
 .information-link:hover {
