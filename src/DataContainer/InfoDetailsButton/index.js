@@ -1,5 +1,5 @@
 import Header from "../../Header";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./styles.css";
 import React, { useState, useEffect } from "react";
 import { URL } from "../../Utills/constants";
@@ -20,6 +20,7 @@ const InfoDetailsButton = () => {
   useEffect(() => {
     gettingData();
   }, []);
+  
   const handleClick = () => {
     navigate ('/')
   }

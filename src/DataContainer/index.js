@@ -1,5 +1,5 @@
-import {Navigate, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const DataContainer = ({ coctails }) => {
   const navigate = useNavigate ();

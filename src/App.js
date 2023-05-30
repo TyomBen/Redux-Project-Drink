@@ -1,19 +1,20 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import About from "./DataContainer/About";
-import InfoDetailsButton from "./DataContainer/InfoDetailsButton";
+import { paths } from "./Components/Paths";
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/coctail/:idDrink"
-            element={<InfoDetailsButton />}
-          ></Route>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          {paths.map(({ path, element }) => {
+            return <Route path={path} element={element}></Route>;
+          })}
+          {paths.map(({ path, element }) => {
+            return <Route path={path} element={element} />;
+          })}
+          {paths.map(({ path, element }) => {
+            return <Route path={path} element={element} />;
+          })}
         </Routes>
       </BrowserRouter>
     </>

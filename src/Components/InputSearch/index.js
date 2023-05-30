@@ -1,4 +1,4 @@
-const InputSearch = ({setValueSearch, valuesearch}) => {
+const InputSearch = ({ setValueSearch, valuesearch }) => {
     return (
         <input
         type="text"
