@@ -2,15 +2,16 @@ import Header from "../../Header";
 import { Link, useParams } from "react-router-dom";
 import "./styles.css";
 import React, { useState, useEffect } from "react";
-import { URL } from "../../Utills/constant";
+import { URL } from "../../Utills/constants";
 const InfoDetailsButton = () => {
   const { idDrink } = useParams();
   const [datas, setDatas] = useState([]);
   const gettingData = async () => {
     try {
-      const response = await fetch(`${URL}?i=${idDrink}`);
+      const response = await fetch(`${URL}lookup.php?i=${idDrink}`);
       const data = await response.json();
-      setDatas(data.drinks);
+      const { drinks } = data;
+      setDatas(drinks);
     } catch (error) {
       throw error;
     }
@@ -61,7 +62,7 @@ const InfoDetailsButton = () => {
                     {" "}
                     Instructons :{" "}
                   </span>{" "}
-                  <span className="instructions">{strInstructions}</span>
+                  <span className="instructions">{strInstructions}</span> <br />
                   <span className="samestyle category">
                     {" "}
                     Ingredients :{" "}

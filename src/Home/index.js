@@ -1,12 +1,12 @@
 import Header from "../Header";
 import List from "../List";
 const Home = () => {
-return (
+  return (
     <>
-    <Header />
-    <List />
+      <Header />
+      <List />
     </>
-)
-}
+  );
+};
 
 export default Home;
