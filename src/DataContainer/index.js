@@ -1,14 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const DataContainer = ({ coctails }) => {
+const DataContainer = ({ data }) => {
   const navigate = useNavigate ();
   const handleClick = (idDrink) => {
     navigate (`/coctail/${idDrink}`)
   }
   return (
     <section className="section">
-      {coctails.map((coctail) => {
+      {data.map((coctail) => {
         const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } =
           coctail;
         return (

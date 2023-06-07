@@ -3,7 +3,7 @@ const VisibleCoctails = ({
   setValueSearch,
   valuesearch,
   DataContainer,
-  coctails,
+  data,
 }) => {
   return (
     <>
@@ -19,7 +19,7 @@ const VisibleCoctails = ({
             <h1>Cocktails</h1>
           </div>
         </section>
-        <DataContainer coctails={coctails} />
+        <DataContainer data={data} />
       </main>
     </>
   );
