@@ -9,22 +9,8 @@ import { fetchingData } from "../Components/store/action/action";
 const List = () => {
   const dispatch = useDispatch ()
   const {data} = useSelector (({fetchingData }) => fetchingData )
-  // const [coctails, setCoctails] = useState([]);
+  
   const [valuesearch, setValueSearch] = useState("");
-  // const gettingData = async () => {
-  //   try {
-  //     const response = await fetch(`${URL}search.php?s=${valuesearch}`);
-  //     const data = await response.json();
-  //     const { drinks } = data;
-  //     setCoctails(drinks);
-  //   } catch (eror) {
-  //     throw eror;
-  //   }
-  // };
-  // useEffect(() => {
-  //   gettingData();
-  // }, [valuesearch]);
-
   useEffect (() => {
     dispatch (fetchingData (valuesearch))
   }, [valuesearch])
