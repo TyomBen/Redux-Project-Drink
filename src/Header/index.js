@@ -18,6 +18,9 @@ const Header = () => {
             >
               About
             </Link>
+            <Link to = '/newsletter'  className="headerHomeLink textDecorationNoneandColor">
+            Newsletter
+            </Link>
           </div>
         </nav>
       </header>
